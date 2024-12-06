@@ -25,6 +25,7 @@
 const int ROWS_A = 25000; // Number of rows in Matrix A
 const int COLS_A = 30000; // Number of columns in Matrix A
 const int COLS_B = 20000; // Number of columns in Matrix B
+const int SIZE_DATA = 256; // Default matrix size (if not provided)
 /* Helper function to print a matrix */
 void print_matrix(const char* name, float* matrix, size_t rows, size_t cols) {
     printf("%s:\n", name);
