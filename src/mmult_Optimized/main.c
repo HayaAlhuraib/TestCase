@@ -97,8 +97,7 @@ int main(int argc, char** argv) {
     srand((unsigned int)time(NULL)); // Seed the random number generator
 
     // Allocate memory for matrices A, B, and result R
-    float ```c
-* A = malloc(ROWS_A * COLS_A * sizeof(float)); // Matrix A
+    float* A = malloc(ROWS_A * COLS_A * sizeof(float)); // Matrix A
     float* B = malloc(COLS_A * COLS_B * sizeof(float)); // Matrix B
     float* R = malloc(ROWS_A * COLS_B * sizeof(float)); // Result matrix R
 
