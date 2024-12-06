@@ -22,10 +22,12 @@
 
 /* Include application-specific headers */
 #include "include/types.h"
+
 const int ROWS_A = 25000; // Number of rows in Matrix A
 const int COLS_A = 30000; // Number of columns in Matrix A
 const int COLS_B = 20000; // Number of columns in Matrix B
 const int SIZE_DATA = 256; // Default matrix size (if not provided)
+
 /* Helper function to print a matrix */
 void print_matrix(const char* name, float* matrix, size_t rows, size_t cols) {
     printf("%s:\n", name);
@@ -92,21 +94,18 @@ int main(int argc, char** argv) {
     }
 
     /* Initialize matrices */
-    size_t size = data_size;  // Square matrix dimensions
     srand((unsigned int)time(NULL)); // Seed the random number generator
 
-   float* A = malloc(ROWS_A * COLS_A * sizeof(float)); // Matrix A
+    // Allocate memory for matrices A, B, and result R
+    float ```c
+* A = malloc(ROWS_A * COLS_A * sizeof(float)); // Matrix A
     float* B = malloc(COLS_A * COLS_B * sizeof(float)); // Matrix B
     float* R = malloc(ROWS_A * COLS_B * sizeof(float)); // Result matrix R
 
-       if (!A || !B || !R) {
+    if (!A || !B || !R) {
         fprintf(stderr, "Memory allocation failed.\n");
         exit(1);
     }
-
-    /* Set A and B inside input */
-    float* A = input;                           // A starts at the beginning
-    float* B = input + size * size;             // B starts right after A
 
     /* Initialize input matrices A and B */
     for (size_t i = 0; i < ROWS_A * COLS_A; i++) {
@@ -116,12 +115,10 @@ int main(int argc, char** argv) {
         B[i] = (float)(rand() % 10); // Random numbers between 0 and 9
     }
 
-
     /* Print input matrices */
     print_matrix("Matrix A", A, ROWS_A, COLS_A);
     print_matrix("Matrix B", B, COLS_A, COLS_B);
 
-    
     /* Compare Naive and Optimized Implementations */
     float* R_naive = malloc(ROWS_A * COLS_B * sizeof(float));
     args_t args_naive = { .input = A, .output = R_naive, .size = ROWS_A * COLS_A };
