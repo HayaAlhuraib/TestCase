@@ -11,5 +11,7 @@ typedef struct {
     int cpu;           // CPU core to execute the benchmark (optional)
     int nthreads;      // Number of threads to use (optional for parallel implementation)
 } args_t;
-
+extern const int ROWS_A; // Number of rows in Matrix A
+extern const int COLS_A; // Number of columns in Matrix A
+extern const int COLS_B; // Number of columns in Matrix B
 #endif // __INCLUDE_TYPES_H_
