@@ -14,6 +14,10 @@
 
 void* impl_scalar_naive(void* args) {
     args_t* a = (args_t*)args;
+    const size_t ROWS_A = 25000; // Number of rows in Matrix A
+    const size_t COLS_A = 30000; // Number of columns in Matrix A
+    const size_t COLS_B = 20000; // Number of columns in Matrix B
+
     float* A = a->input; // Pointer to Matrix A
     float* B = a->input + (ROWS_A * COLS_A); // Pointer to Matrix B
     float* R = a->output; // Pointer to Result Matrix R
