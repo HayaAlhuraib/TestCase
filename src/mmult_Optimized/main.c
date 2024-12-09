@@ -115,8 +115,8 @@ int main(int argc, char** argv) {
     }
 
     /* Print input matrices */
-    print_matrix("Matrix A", A, ROWS_A, COLS_A);
-    print_matrix("Matrix B", B, COLS_A, COLS_B);
+   /* print_matrix("Matrix A", A, ROWS_A, COLS_A);*/
+   /* print_matrix("Matrix B", B, COLS_A, COLS_B);*/
 
     /* Compare Naive and Optimized Implementations */
     float* R_naive = malloc(ROWS_A * COLS_B * sizeof(float));
@@ -128,7 +128,7 @@ int main(int argc, char** argv) {
     double naive_time = (double)(end - start) / CLOCKS_PER_SEC;
 
     printf("Naive Runtime: %.6f seconds\n", naive_time);
-    print_matrix("Result Matrix R (Naive)", R_naive, ROWS_A, COLS_B);
+    /*print_matrix("Result Matrix R (Naive)", R_naive, ROWS_A, COLS_B);*/
 
     args_t args_opt = { .input = A, .output = R, .size = ROWS_A * COLS_A };
 
@@ -138,7 +138,7 @@ int main(int argc, char** argv) {
     double opt_time = (double)(end - start) / CLOCKS_PER_SEC;
 
     printf("Optimized Runtime: %.6f seconds\n", opt_time);
-    print_matrix("Result Matrix R (Optimized)", R, ROWS_A, COLS_B);
+   /* print_matrix("Result Matrix R (Optimized)", R, ROWS_A, COLS_B);*/
 
     printf("Speedup: %.2fx\n", naive_time / opt_time);
 
